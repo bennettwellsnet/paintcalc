@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script>
+    if (location.pathname.startsWith('/paintcalc')) {
+      const b = document.createElement('base');
+      b.href = '/paintcalc/';
+      document.head.insertBefore(b, document.head.firstChild);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PaintCalc • Painting Productivity Tools</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-OLBgp1GsljhM2TJ+sbHjaiH9txEUvgdDTAzHv2P24donTt6/529l+9Ua0vFImLlb" crossorigin="anonymous">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
     body { font-family: 'Inter', system_ui, sans-serif; }
     .font-display { font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif; font-weight: 600; }
     .metric { font-variant-numeric: tabular-nums; }
@@ -125,12 +132,12 @@
           </div>
 
           <div class="mt-4">
-            <button id="add-surface" 
+            <button id="add-surface"
                     class="w-full md:w-auto px-5 py-2.5 bg-orange-600 hover:bg-orange-700 text-white rounded-2xl font-semibold text-sm flex items-center justify-center gap-x-2">
               <i class="fa-solid fa-plus"></i>
               <span>Add Surface to Project</span>
             </button>
-            <button id="clear-project" 
+            <button id="clear-project"
                     class="ml-2 text-sm text-stone-500 hover:text-red-600 px-3 py-2">Clear All</button>
           </div>
         </div>
@@ -208,7 +215,7 @@
   </div>
 
   <footer class="max-w-5xl mx-auto px-6 py-8 text-xs text-stone-500 border-t">
-    Built as a self-contained demo of modular JavaScript for practical productivity tools. 
+    Built as a self-contained demo of modular JavaScript for practical productivity tools.
     Calculations include standard industry coverage rates and productivity assumptions.
   </footer>
 
